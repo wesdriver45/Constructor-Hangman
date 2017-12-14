@@ -1,0 +1,23 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "cli game",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wesdriver45/Constructor-Hangman.git"
+  },
+  "author": "Wesley Blake Jr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wesdriver45/Constructor-Hangman/issues"
+  },
+  "homepage": "https://github.com/wesdriver45/Constructor-Hangman#readme",
+  "dependencies": {
+    "inquirer": "^4.0.1",
+    "prompt": "^1.0.0"
+  }
+}
