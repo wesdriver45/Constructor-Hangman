@@ -1,0 +1,1 @@
+//object for the current word to be guessed
