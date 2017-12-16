@@ -10,10 +10,11 @@ var Word = function(wrd){
 			this.lets.push(new Letter(this.word[i]));
 		}
 	}
+
+	//letter guess
 	this.checkLetter = function(guessLetter){
 		var letterReturn = 0;
 		for(var i = 0; i < this.lets.length; i++){
-			// if the value of lets[i] === the letter the user guessed, set .appear to true, add +1 to letterReturn
 			if (this.lets[i] === guessLetter) {
 				this.lets[i].appear = true;
 				letterReturn++;
@@ -21,6 +22,8 @@ var Word = function(wrd){
 		}
 		return letterReturn;
 	}
+
+
 	this.checkWord = function(){
 		
 				var count = 0;
@@ -33,7 +36,7 @@ var Word = function(wrd){
 			this.found = true;
 		}
 		return this.found;
-
+	//should turn word to string
 	this.wordRender = function(){
 		var str = "";
 		for(var i = 0; i < this.lets.length; i++) {
