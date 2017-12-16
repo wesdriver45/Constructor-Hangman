@@ -7,9 +7,9 @@ var letter = ("./letters.js");
 //start the prompt
 prompt.start();
 
-var game = {
+// create the game object with keys inside
+var game = function() { 
+	this.words = ["pizza", "wings", "tacos", "borscht", "scampi", "casserole", "zabaglione"]  
+	this.guessRemaining = 10;
+	this.currentWrd = null;
 	
-}
-
-
-
