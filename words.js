@@ -10,6 +10,7 @@ var Word = function(wrd){
 			this.lets.push(new Letter(this.word[i]));
 		}
 	}
+}
 
 	//letter guess
 	this.checkLetter = function(guessLetter){
@@ -45,25 +46,27 @@ var Word = function(wrd){
 		}
 	}
 }
-module.exports = Word;
-var Word = function(wrd){
-	this.word = wrd,
-	this.lets = [],
-	this.found = false,
-	this.getLets = function(){
-		for(var i = 0; i < word.length; i++){
-			this.lets.push(new Letter(this.word[i]));
-		}
-	}
-	this.checkLetter = function(guessLetter){
-		var letterReturn = 0;
-		for(var i = 0; i < this.lets.length; i++){
-			//
-			if (this.lets[i] === guessLetter) {
-				this.lets[i].appear = true;
-				letterReturn++;
+	module.exports = Word;
+	var Word = function(wrd){
+		this.word = wrd,
+		this.lets = [],
+		this.found = false,
+		this.getLets = function(){
+			for(var i = 0; i < word.length; i++){
+				this.lets.push(new Letter(this.word[i]));
 			}
 		}
-		return letterReturn;
+		this.checkLetter = function(guessLetter){
+			var letterReturn = 0;
+			for(var i = 0; i < this.lets.length; i++){
+				//
+				if (this.lets[i] === guessLetter) {
+					this.lets[i].appear = true;
+					letterReturn++;
+				}
+			}
+			return letterReturn;
+		}
 	}
+
 	

@@ -7,17 +7,17 @@ var letter = ("./letters.js");
 //start the prompt
 prompt.start();
 
-// create the game object with 
+// the game object
 var game = function() { 
 	this.words = ["pizza", "wings", "tacos", "borscht", "scampi", "casserole", "zabaglione"]  
 	this.guessRemaining = 10;
 	this.currentWrd = null;
-	this.startGame = function(wrd){
+	this.startGame = function(wrd) {
 		var randWord = Math.floor(Math.random() * this.words.length)
 		this.currentWrd = new Word(this.words[randWord]);
 		this.currentWrd.getLets(); 
 		this.userPrompt; 
-	}
+	};
 	//prompt
 	this.userPrompt = function(){
 		var self = this; 
