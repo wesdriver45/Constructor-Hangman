@@ -1,13 +1,14 @@
 //object for the current word to be guessed
+var letters = ("./letters.js");
 
 var Word = function(wrd){
 	this.word = wrd,
 	this.lets = [],
 	this.found = false,
 	this.getLets = function(){
-		for(var i = 0; i < word.length; i++){
+		for(var i = 0; i < this.word.length; i++){
 			// pushes the letter entered into the empty array
-			this.lets.push(new Letter(this.word[i]));
+			this.lets.push(new letter(this.word[i]));
 		}
 	}
 }
@@ -53,7 +54,7 @@ var Word = function(wrd){
 		this.found = false,
 		this.getLets = function(){
 			for(var i = 0; i < word.length; i++){
-				this.lets.push(new Letter(this.word[i]));
+				this.lets.push(new letter(this.word[i]));
 			}
 		}
 		this.checkLetter = function(guessLetter){

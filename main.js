@@ -2,48 +2,48 @@
 var inquirer = require("inquirer");
 var prompt = require("prompt");
 var word = require("./words.js");
-var letter = ("./letters.js");
+
 
 //start the prompt
 prompt.start();
 
 // the game object
-var game = function() { 
+function game() { 
 	this.words = ["pizza", "wings", "tacos", "borscht", "scampi", "casserole", "zabaglione"]  
-	this.guessRemaining = 10;
+	this.guessLeft = 10;
 	this.currentWrd = null;
 	this.startGame = function(wrd) {
 		var randWord = Math.floor(Math.random() * this.words.length)
 		this.currentWrd = new Word(this.words[randWord]);
 		this.currentWrd.getLets(); 
-		this.userPrompt; 
+		this.userPrompt(); 
 	};
 	//prompt
 	this.userPrompt = function(){
 		var self = this; 
 		prompt.get(["guessLetter"], function(err, result){
-			console.log("The letter or space you guessed is " + result.guessLetter);
-			var findHowManyOfUserGuess = currentWrd.checkIfLetterFound(result.guessLetter)
-			if(findHowManyOfUserGuess === 0){
+			console.log("The letter you guessed is " + result.guessLetter);
+			var numberGuesses = currentWrd.checkLetter(result.guessLetter)
+			if(numberGuesses === 0){
 				console.log("Your guess is WRONG!!");
-				self.guessRemaining--;
+				self.guessLeft--;
 			}
 			else{
-				console.log("Your guess was RIGHT!!");
-				if(self.currentWrd.didWeFindTheWord() === true){
-					console.log("YOU WON!!");
-					return 1; //end the game?
+				console.log("Your guess was rigth!");
+				if(self.currentWrd.checkWord() === true){
+					console.log("YOU won!");
+					return 1; 
 				}
 				else{
-					console.log("Guesses remaining: " + guessRemaining);
+					console.log("Guesses left: " + guessLeft);
 					console.log(this.currentWrd.wordRender());
 				}
 			}
-			if(self.guessRemaining > 0 && self.currentWrd.found === false){
+			if(self.guessLeft > 0 && self.currentWrd.found === false){
 				userPrompt;
 			}
-			else if(self.guessRemaining === 0){
-				console.log("Game Over Bro!" + self.currentWrd.word);
+			else if(self.guessLeft === 0){
+				console.log("Game Over!" + self.currentWrd.word);
 			}
 			else{
 				console.log(self.currentWrd.wordRender()); 

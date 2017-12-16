@@ -1,7 +1,7 @@
 //letters guessed wtih the actual character or an underscore
 
-var Letter = function(let){
-	this.charac = let,
+var letter = function(let){
+	this.character = let,
 	this.appear = false,
 	this.letterRender = function(){
 		if(this.appear === false){
@@ -13,4 +13,4 @@ var Letter = function(let){
 	}
 }
 
-module.exports = Letter;
+module.exports = letter;
