@@ -1,5 +1,5 @@
 //object for the current word to be guessed
-var letters = ("./letters.js");
+var letter = ("./letters.js");
 
 var Word = function(wrd){
 	this.word = wrd,
@@ -47,13 +47,13 @@ var Word = function(wrd){
 		}
 	}
 }
-	module.exports = Word;
+	
 	var Word = function(wrd){
 		this.word = wrd,
 		this.lets = [],
 		this.found = false,
 		this.getLets = function(){
-			for(var i = 0; i < word.length; i++){
+			for(var i = 0; i < this.word.length; i++){
 				this.lets.push(new letter(this.word[i]));
 			}
 		}
@@ -70,4 +70,4 @@ var Word = function(wrd){
 		}
 	}
 
-	
+	module.exports = Word;

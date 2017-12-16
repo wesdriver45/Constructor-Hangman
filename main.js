@@ -1,14 +1,14 @@
 //vars for npms and pages
 var inquirer = require("inquirer");
 var prompt = require("prompt");
-var word = require("./words.js");
+var Word = require("./words.js");
 
 
 //start the prompt
 prompt.start();
 
 // the game object
-function game() { 
+var game = function() { 
 	this.words = ["pizza", "wings", "tacos", "borscht", "scampi", "casserole", "zabaglione"]  
 	this.guessLeft = 10;
 	this.currentWrd = null;
@@ -52,5 +52,6 @@ function game() {
 	}
 };
 
-game.startGame();
+var newGame = new game();
+newGame.startGame();
 
