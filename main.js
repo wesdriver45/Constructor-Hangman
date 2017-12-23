@@ -1,17 +1,31 @@
 var inquirer = require("inquirer");
 var prompt = require("prompt");
-var words = require("./words.js");
+var randomWord = require("./words.js");
 var letters = require("./letters.js")
 
-var game = function(guessleft, ){
+
+
+//game function
+var game = function(numOfGuesses, guessesleft) {
 
 }
 
-var askUser = functio() {
+var lettersGuesses = [];
+var userGuess = 0;
+
+var askUser = function() {
+
+	if (count < randomWord.length) {
+		userGuess ++;
+		console.log("Guess again.");
+	}
 
 	inquirer.prompt([
 		{
-
+			name: "guess",
+			type: "input",
+			message: "Guess a letter."
 		}
 
 	]);
+};

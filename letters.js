@@ -1,6 +1,5 @@
 var letters = [];
 
-module.exports {
-	letters: letters;
-}
+module.exports = letters;
+
 

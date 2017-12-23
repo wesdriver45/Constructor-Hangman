@@ -1,9 +1,13 @@
-var letters = require("./letters.js")
+var letters = require("./letters.js");
 
-var words = [];
+var words = ["random", "words", "hangman", "constructor", "game"];
 
-
-
-module.exports = {
-	words: words;
+//function to choose a random word
+var wordPicker = function() {
+	var randomWord = (Math.floor(Math.random() * words.length));
+	return randomWord;
 }
+
+
+
+module.exports = randomWord;
