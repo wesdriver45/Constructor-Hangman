@@ -7,6 +7,9 @@ var letters = require("./letters.js")
 
 //game function
 var game = function(numOfGuesses, guessesleft) {
+	this.numOfGuesses = ;
+	this.guessesLeft = 10;
+	
 
 }
 
