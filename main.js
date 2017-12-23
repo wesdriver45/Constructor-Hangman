@@ -6,22 +6,34 @@ var letters = require("./letters.js")
 
 
 //game function
-var game = function(numOfGuesses, guessesleft) {
-	this.numOfGuesses = ;
+var game = function(gameWord,  numOfGuesses, guessesleft) {
+	this.gameWord = randomWord;
+	this.numOfGuesses = "";
 	this.guessesLeft = 10;
+
+	this.guesses = function() {
+		if (this.numOfGuesses <= this.guessesLeft) {
+			guessesLeft --;
+			console.log("You have " + this.guessesLeft + ".");
+		}
+	};
+	this.wordLength = function () {
+
+	};
 	
 
 }
-
+//vars for prompt
 var lettersGuesses = [];
 var userGuess = 0;
-
+//
 var askUser = function() {
 
-	if (count < randomWord.length) {
+	if (count < randomWord.length &&) {
 		userGuess ++;
 		console.log("Guess again.");
 	}
+
 
 	inquirer.prompt([
 		{
@@ -30,5 +42,7 @@ var askUser = function() {
 			message: "Guess a letter."
 		}
 
-	]);
+	]).then(function(answers) {
+		var newLetter = new letters(answers.)
+	});
 };
