@@ -11,13 +11,19 @@ var game = function(gameWord,  numOfGuesses, guessesleft) {
 	this.numOfGuesses = "";
 	this.guessesLeft = 10;
 
+	this.wordLength = function () {
+		
+	};
+
+	
 	this.guesses = function() {
 		if (this.numOfGuesses <= this.guessesLeft) {
 			guessesLeft --;
 			console.log("You have " + this.guessesLeft + ".");
 		}
 	};
-	this.wordLength = function () {
+	
+	this.addletters = function() {
 
 	};
 	
@@ -29,11 +35,13 @@ var userGuess = 0;
 //
 var askUser = function() {
 
-	if (count < randomWord.length &&) {
+	if (userGuess < gameWord.length && userGuess < guessesLeft) {
 		userGuess ++;
 		console.log("Guess again.");
 	}
-
+	else {
+		guessesLeft--
+	}
 
 	inquirer.prompt([
 		{
@@ -43,6 +51,7 @@ var askUser = function() {
 		}
 
 	]).then(function(answers) {
-		var newLetter = new letters(answers.)
+		var newLetter = new letters(answers.guess);
+		lettersGuesses.push(newLetter);
 	});
 };
